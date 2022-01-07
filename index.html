@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Conversion Calculator</title>
+    <style>
+        .main-container{
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .main-container div{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        table{
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Defining the conversion table -->
+    <div class="table" style="margin: 0 auto;">
+        <table>
+            <thead>
+                <tr>
+                    <td>COUNTRY</td>
+                    <td>CORRESPONDING VALUE FOR RM 1.00</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>UNITED STATES OF AMERICA</td>
+                    <td>0.24</td>
+                </tr>
+                <tr>
+                    <td>JAPANESE YEN</td>
+                    <td>26.76</td>
+                </tr>
+                <tr>
+                    <td>INDIAN RUPEE</td>
+                    <td>17.89</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Setting up the form -->
+    <div class="main-container">
+        <div class="rm-container" >
+            <label for="rm" style="display: block; margin-bottom: 20px;">MALAYSIAN RINGGIT (RM)</label>
+            <hr>
+            <input type="text" name="rm" id="rm" onchange="getValue(value)">
+        </div>
+        <div>
+            <label for="money" style="display: block; margin-bottom: 20px;">FOREIGN MONEY</label>
+            <hr>
+            <select name="money" id="money" onchange="getCurrency(value)">
+                <option value="USD">US DOLLAR</option>
+                <option value="YEN">JAPANESE YEN</option>
+                <option value="INR">INDIAN RUPEE</option>
+            </select>
+        </div>
+        <div>
+            <p style="height: 31px; margin: 0px">CONVERSION VALUE</p>
+            <hr>
+            <p id="final-value"></p>
+        </div>
+    </div>
+    <div>
+        <button style="display: block; margin: 0 auto;" type="submit" onclick="onSubmit()">Calculate</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
